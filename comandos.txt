@@ -4,9 +4,11 @@ v.random restrict=geo_cantones output=puntosCovid npoints=10000 layer=1
 
 v.category
 
-v.surf.rst in=puntosCat4 elev=puntosCasos4 zcolumn=geo_cantones_CASOS
+v.surf.idw input=puntosRandomCategory  output=puntosCasosCategory npoints=5 column=geo_cantones_CASOS
 
-v.surf.idw input=puntosCat4  output=puntosCasos4 npoints=3 column=geo_cantones_CASOS
 
 r.colors
+
+
+r.rescale
 
