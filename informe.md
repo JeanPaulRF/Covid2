@@ -17,6 +17,8 @@ Pasos para la creacion de los mapas:
 
 4. Se le anadio la categoria y atributos de los cantones a los puntos creados anteriormente
 
+5. Se edito el numero de columnas y filas de la region a 1000 para que la interpolacion no durara tanto
+
 5. Se utilizo la interpolacion por curvas spline para crear el heatmap
 
 6. Se eligio la tabla de color a utilizar

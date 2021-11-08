@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "hospitalesMaxMuertes",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32617" } },
+"features": [
+{ "type": "Feature", "properties": { "cat": 2, "NOMBRE": "HOSPITAL CARLOS LUIS VALVERDE VEGA SAN RAMON", "TELEFONO": "2445-5388 / 2445-5825 / 2445-5008", "PROVINCIA": "ALAJUELA", "CANTON": "SAN RAMON", "DISTRITO": "SAN RAMON" }, "geometry": { "type": "Point", "coordinates": [ 119660.899980633927044, 1117092.743209708714858 ] } },
+{ "type": "Feature", "properties": { "cat": 4, "NOMBRE": "HOSPITAL DR. FERNANDO ESCALANTE PRADILLA", "TELEFONO": "2771-3122 | 2771-0319", "PROVINCIA": "SAN JOSE", "CANTON": "PEREZ ZELEDON", "DISTRITO": "SAN ISIDRO" }, "geometry": { "type": "Point", "coordinates": [ 203218.012827902683057, 1037250.683332760469057 ] } },
+{ "type": "Feature", "properties": { "cat": 11, "NOMBRE": "HOSPITAL DR. MAX TERAN VALLS QUEPOS", "TELEFONO": "2777-0922 / 2777-1397/2777-1122", "PROVINCIA": "PUNTARENAS", "CANTON": "AGUIRRE", "DISTRITO": "QUEPOS" }, "geometry": { "type": "Point", "coordinates": [ 153071.932509241101798, 1043643.580533852800727 ] } },
+{ "type": "Feature", "properties": { "cat": 13, "NOMBRE": "HOSPITAL MONSEÑOR SANABRIA PUNTARENAS", "TELEFONO": "2663-0033 / 2663-0133 / 2663-1199", "PROVINCIA": "PUNTARENAS", "CANTON": "PUNTARENAS", "DISTRITO": "EL ROBLE" }, "geometry": { "type": "Point", "coordinates": [ 89290.114249954465777, 1105466.994852375006303 ] } },
+{ "type": "Feature", "properties": { "cat": 24, "NOMBRE": "HOSPITAL SAN VITO DE COTO BRUS", "TELEFONO": "2773-3103", "PROVINCIA": "PUNTARENAS", "CANTON": "COTO BRUS", "DISTRITO": "SAN VITO" }, "geometry": { "type": "Point", "coordinates": [ 283193.347715385782067, 975423.086725429515354 ] } }
+]
+}
