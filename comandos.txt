@@ -1,5 +1,7 @@
 v.import
 
+g.region
+
 v.random restrict=geo_cantones output=puntosCovid npoints=10000 layer=1
 
 v.category
@@ -12,3 +14,10 @@ r.colors
 
 r.rescale
 
+
+v.extract input=geo_cantones output=cantonesMax where="MUERTES > 200"
+
+v.select ainput=clinicas2008crtm05_WGS_84 binput=cantonesMaxMuertes output=clinicasMaxMuertes operator=overlap
+
+
+v.select ainput=hospitales2008crtm05 binput=cantonesMaxMuertes output=hospitalesMaxMuertes operator=overlap
