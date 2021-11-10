@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+        <title>Heatmap casos</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <style>
+        body { margin: 0; padding: 0; }
+        </style>
+        <style>
+            h1 {text-align: center;}
+            p {text-align: center;}
+            div {text-align: center;}
+            .container {
+                max-width: 500px;
+  margin: auto;
+                }
+
+                .vertical-center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                }
+            </style>
+            
+    </head>
+    <body>
+        <h1>HeatMap de personas fallecidas por Covid-19</h1>
+        <style>
+            .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
+        </style>
+        <div class="container">
+            <div class="vertical-center">
+        <div id='map' style='width: 550px; height:550px;'></div>
+            </div>
+        </div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1Ijoiam14MyIsImEiOiJja3U4dDg1N2owMDd3MnVyczZ6eGVrejBrIn0.bdRyBhkl-jZwGO5A53t1Rw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/jmx3/ckvsnx5c703b014s33ts3vbtg',
+                center: [ -84.325842233181291, 9.590961778192716 ],
+                zoom: 7,
+                pitch: 0,
+
+            });
+            map.on('load', () => {
+                // Add a data source containing GeoJSON data.
+                map.addSource('maine', {
+                'type': 'geojson',
+                'data': 'https://jeanpaulrf.github.io/Covid2/cantones.geojson'
+                });
+                
+                // Add a new layer to visualize the polygon.
+                map.addLayer({
+                'id': 'maine',
+                'type': 'fill',
+                'source': 'maine', // reference the data source
+                'layout': {},
+                'paint': {
+                'fill-color': '#0080ff', // blue color fill
+                'fill-opacity': 0.000001
+                }
+                });
+                // Add a black outline around the polygon.
+                map.addLayer({
+                'id': 'outline',
+                'type': 'line',
+                'source': 'maine',
+                'layout': {},
+                'paint': {
+                'line-color': '#000',
+                'line-width': 0.5
+                }
+                });
+                map.on('click', 'maine', (e) => {
+                    new mapboxgl.Popup()
+.                   setLngLat(e.lngLat)
+    .               setHTML(e.features[0].properties.NCANTON + " de " + e.features[0].properties.NPROVINCIA + ". Personas fallecidas: "+e.features[0].properties.MUERTES )
+                    
+    .               addTo(map);
+                    });
+                    map.on('mouseenter', 'maine', () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                    });
+                });
+            </script>
+    </body>
+</html>
