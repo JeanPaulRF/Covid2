@@ -61,7 +61,7 @@
                     });
                 map.addSource('puntos', {
                 type: 'geojson',
-                data: 'C:/Users/Mauricio/Desktop/TEC/SIG/Covid2/EscuelasMaxCasos.geojson'
+                data: 'https://jeanpaulrf.github.io/Covid2/escuelas.geojson'
                 });
             
                 map.addLayer({
@@ -89,7 +89,7 @@
                     
                     new mapboxgl.Popup()
                     .setLngLat(coordinates)
-                    .setHTML("Escuela " + e.features[0].properties.NOMBRE + " de circuito " + e.features[0].properties.CIRCUITO + " en " + e.features[0].properties.CANT3N + " de " + e.features[0].properties.PROVINCIA)
+                    .setHTML("Escuela " + e.features[0].properties.NOMBRE + " de circuito " + e.features[0].properties.CIRCUITO + " en " + e.features[0].properties.CANTC3N + " de " + e.features[0].properties.PROVINCIA)
                     .addTo(map);
                     });
                     
